@@ -6,8 +6,8 @@ const { v4: uuidv4 } = require("uuid");
 app.use(express.json());//middleware to parse json data
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/expenses").then(() => {
-    console.log("Connected to mongodb");
+mongoose.connect("mongodb+srv://Prishasanthosh:prishasanthosh@cluster0.udjjrkz.mongodb.net/").then(() => {
+    console.log("Connected to database");
 })
 const expenseSchema = new mongoose.Schema({
     id: { type: String, required: true, unique: true },
