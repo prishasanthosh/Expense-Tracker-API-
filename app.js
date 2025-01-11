@@ -3,8 +3,11 @@ const app = express();
 
 const { v4: uuidv4 } = require("uuid");
 
+const cors=require('cors');//cross origin resource sharing
+app.use(cors())
 app.use(express.json());//middleware to parse json data
 const mongoose = require("mongoose");
+
 
 mongoose.connect("mongodb+srv://Prishasanthosh:prishasanthosh@cluster0.udjjrkz.mongodb.net/").then(() => {
     console.log("Connected to database");
@@ -83,6 +86,8 @@ app.delete("/api/expenses/:id",async(req,res)=>{
         res.status(500).json({message:"Error in deleting expense"});
     }
 });
+
+
 
 // const students=[{
 //     name:"Suriya",
